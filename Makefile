@@ -42,6 +42,7 @@ dist: clean
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm dwm-msg ${DESTDIR}${PREFIX}/bin
+	cp -f dwm.desktop /usr/share/xsessions
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm-msg
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
@@ -49,6 +50,7 @@ install: all
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 
 uninstall:
+	rm -f /usr/share/xsessions/dwm.desktop
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
